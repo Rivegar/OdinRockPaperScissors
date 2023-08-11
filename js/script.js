@@ -1,5 +1,28 @@
 const myArray = ["ROCK", "PAPER", "SCISSORS"];
 
+let playerSelection = "";
+
+let rock = document.getElementById("rock");
+rock.addEventListener("click", function(e){
+	playerSelection = "ROCK";
+	computerSelection = getComputerChoice();
+	playRound(playerSelection, computerSelection);
+});
+
+let paper = document.getElementById("paper");
+paper.addEventListener("click", function(e){
+	playerSelection = "PAPER";
+	computerSelection = getComputerChoice();
+	playRound(playerSelection, computerSelection);
+});
+
+let scissors = document.getElementById("scissors");
+scissors.addEventListener("click", function(e){
+	playerSelection = "SCISSORS";
+	computerSelection = getComputerChoice();
+	playRound(playerSelection, computerSelection);
+});
+
 function getComputerChoice()
 {
 	return(myArray[(Math.floor(Math.random() * myArray.length))]);
@@ -7,35 +30,35 @@ function getComputerChoice()
 
 function playRound(playerSelection, computerSelection)
 {
-	let myLog = '';
+	let roundResult = document.getElementById("result");
 	if(playerSelection === "ROCK")
 	{
 		if(computerSelection === "PAPER")
 		{
-			myLog = "You Lose! Paper beats Rock";
+			roundResult.textContent = "You Lose! Paper beats Rock";
 		}
 		else if(computerSelection === "SCISSORS")
 		{
-			myLog = "You Won! Rock beat Scissors";
+			roundResult.textContent = "You Won! Rock beat Scissors";
 		}
 		else if (playerSelection === computerSelection)
 		{
-			myLog = "It's a tie!"
+			roundResult.textContent = "It's a tie!"
 		}
 	}
 	else if(playerSelection === "PAPER")
 	{
 		if(computerSelection === "SCISSORS")
 		{
-			myLog = "You Lose! Scissors beat Paper";
+			roundResult.textContent = "You Lose! Scissors beat Paper";
 		}
 		else if(computerSelection === "ROCK")
 		{
-			myLog = "You Won! Paper beats Rock";
+			roundResult.textContent = "You Won! Paper beats Rock";
 		}
 		else if (playerSelection === computerSelection)
 		{
-			myLog = "It's a tie!"
+			roundResult.textContent = "It's a tie!"
 		}
 
 	}
@@ -43,51 +66,15 @@ function playRound(playerSelection, computerSelection)
 	{
 		if(computerSelection === "ROCK")
 		{
-			myLog = "You Lose! Rock beats Scissors";
+			roundResult.textContent = "You Lose! Rock beats Scissors";
 		}
 		else if(computerSelection === "PAPER")
 		{
-			myLog = "You Won! Scissors beat Paper"
+			roundResult.textContent = "You Won! Scissors beat Paper"
 		}
 		else if(playerSelection === computerSelection)
 		{
-			myLog = "It's a tie!"
+			roundResult.textContent = "It's a tie!"
 		}
-	}
-	return myLog;
-}
-
-function game()
-{
-	let playerWins = 0;
-	let computerWins = 0;
-	for (let i = 0; i < 5; i++) {
-		const playerSelection = prompt().toUpperCase();
-		const computerSelection = getComputerChoice();
-		const result = playRound(playerSelection, computerSelection);
-		console.log(result);
-
-		if(result.includes("You Won"))
-		{
-			playerWins++;
-		}
-		if(result.includes("You Lose"))
-		{
-			computerWins++;
-		}
-	}
-	if (playerWins > computerWins)
-	{
-		return("The player Wins!")
-	}
-	else if (computerWins > playerWins)
-	{
-		return("The computer Wins!")
-	}
-	else
-	{
-		return("It's a tie, no one wins!")
 	}
 }
-
-console.log(game());
