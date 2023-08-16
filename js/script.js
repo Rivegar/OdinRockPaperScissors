@@ -8,7 +8,7 @@ let gamePlayContainer = document.querySelector(".gamePlayContainer");
 gamePlayContainer.style.display = "none";
 let totalScore = document.getElementById("score");
 let winnerMessage = document.getElementById("winnerMessage");
-winnerMessage.textContent = "One wish. One war. Will you be claiming the Grail for yourself... Or are you going to be another step for someone's wish?"
+winnerMessage.textContent = "One wish. One war. Will you be claiming the Holy Grail for yourself... Or are you going to be another step for someone's wish?"
 document.addEventListener("DOMContentLoaded", function () {
 	letterAnimation();
 });
