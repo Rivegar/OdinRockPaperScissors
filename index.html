@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script src="js/script.js" defer></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ysabeau+Infant:wght@500&display=swap"
+		rel="stylesheet">
 </head>
+
 <body>
-	<div class="container">
-		<div id="result"></div>
-		<button id="rock">Rock</button>
-		<button id="paper">Paper</button>
-		<button id="scissors">Scissors</button>
+	<div class="gameContainer">
+		<div id="winnerMessage"></div>
+		<button id="reload"><img src="./images/summonCircle.png" alt="SummonCircle"></button>
+		<div class="gamePlayContainer">
+			<button id="rock"><img src="./images/saber.png" alt="Saber"></button>
+			<button id="paper"><img src="./images/archer.png" alt="Archer"></button>
+			<button id="scissors"><img src="./images/lancer.png" alt="Lancer"></button>
+			<div id="result"></div>
+			<div id="score"></div>
+		</div>
 	</div>
 </body>
+
 </html>
